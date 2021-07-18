@@ -1,5 +1,7 @@
 package com.template.adapter
 
+import com.template.sample.SampleRequestDto
+
 interface SampleKafkaProducer {
-    fun sendEvent(eventMessage: String)
+    fun sendEvent(dto: SampleRequestDto)
 }

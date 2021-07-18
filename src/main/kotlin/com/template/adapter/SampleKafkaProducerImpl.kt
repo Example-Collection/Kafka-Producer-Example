@@ -3,6 +3,7 @@ package com.template.adapter
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.template.config.KafkaProperties
 import com.template.domain.event.SampleEvent
+import com.template.sample.SampleRequestDto
 import org.apache.kafka.clients.producer.KafkaProducer
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.slf4j.LoggerFactory
@@ -35,8 +36,8 @@ class SampleKafkaProducerImpl(private val kafkaProperties: KafkaProperties): Sam
         producer.close()
     }
 
-    override fun sendEvent(eventMessage: String) {
-        val sampleEvent = SampleEvent("Message One", "Message Two")
+    override fun sendEvent(dto: SampleRequestDto) {
+        val sampleEvent = SampleEvent(dto.messageOne, dto.messageTwo)
         val message = objectMapper.writeValueAsString(sampleEvent)
         producer.send(ProducerRecord(TOPIC_MESSAGE, message)).get()
     }
