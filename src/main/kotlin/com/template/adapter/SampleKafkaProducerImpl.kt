@@ -21,12 +21,10 @@ class SampleKafkaProducerImpl(kafkaProperties: KafkaProperties): SampleKafkaProd
     }
 
     private val objectMapper: ObjectMapper = ObjectMapper()
-//    private lateinit var producer: KafkaProducer<String, String>
     private var producer = KafkaProducer<String, String>(kafkaProperties.getProducerProps())
     @PostConstruct
     fun initialize() {
         logger.info("Kafka Producer initializing..")
-//        this.producer = KafkaProducer<String, String>(kafkaProperties.getProducerProps())
         Runtime.getRuntime().addShutdownHook(Thread(this::shutdown))
     }
 
