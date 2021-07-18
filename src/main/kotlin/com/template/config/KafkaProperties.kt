@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration
 @ConfigurationProperties(prefix = "kafka")
 class KafkaProperties {
 
-    private val bootStrapServer = "localhost:8082"
+    private val bootStrapServer = "localhost:9092"
     private val producer = mutableMapOf<String, String>()
 
     fun getProducerProps(): Map<String, Any> {
