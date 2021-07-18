@@ -1,10 +1,8 @@
 package com.template.config
 
-import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-@ConfigurationProperties(prefix = "kafka")
 class KafkaProperties {
 
     private val bootStrapServer = "localhost:9092"
@@ -13,6 +11,8 @@ class KafkaProperties {
     fun getProducerProps(): Map<String, Any> {
         val properties = this.producer
         properties.putIfAbsent("bootstrap.servers", this.bootStrapServer)
+        properties.putIfAbsent("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+        properties.putIfAbsent("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
         return properties
     }
 }
