@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Configuration
 
-@SpringBootApplication(exclude=[DataSourceAutoConfiguration::class, HibernateJpaAutoConfiguration::class])
+@SpringBootApplication(/*exclude=[DataSourceAutoConfiguration::class, HibernateJpaAutoConfiguration::class]*/)
 //@Configuration
 //@EnableAutoConfiguration(exclude=[DataSourceAutoConfiguration::class, HibernateJpaAutoConfiguration::class])
 class Application

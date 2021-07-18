@@ -1,8 +1,10 @@
 package com.template.config
 
+import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 
 @Configuration
+@ConfigurationProperties(prefix = "kafka")
 class KafkaProperties {
 
     private val bootStrapServer = "localhost:8082"

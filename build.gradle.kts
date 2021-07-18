@@ -25,10 +25,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.apache.kafka:kafka-clients")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation(kotlin("test-junit"))
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("junit:junit:4.13.1")
-    testImplementation("com.h2database:h2")
 }
 
 tasks.test {
