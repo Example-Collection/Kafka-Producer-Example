@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct
 import javax.annotation.PreDestroy
 
 @Service
-class SampleKafkaProducerImpl(private val kafkaProperties: KafkaProperties): SampleKafkaProducer {
+class SampleKafkaProducerImpl(kafkaProperties: KafkaProperties): SampleKafkaProducer {
 
     private val logger = LoggerFactory.getLogger(SampleKafkaProducerImpl::class.java)
 
